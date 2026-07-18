@@ -1,0 +1,220 @@
+---
+import namesProjectImg from '../assets/namesProject.png';
+import stickingsBuilderImg from '../assets/stickingsBuilder.png';
+import thesaurusMatchImg from '../assets/thesaurusMatch.png';
+import tonesAndGroovesImg from '../assets/tonesAndGrooves.png';
+import weatherAppImg from '../assets/weatherApp.png';
+
+const projects = [
+  {
+    title: "Weather App",
+    description: "A sleek application providing real-time weather updates and forecasts.",
+    tags: ["Frontend", "API", "Design"],
+    link: "#",
+    image: weatherAppImg.src
+  },
+  {
+    title: "Tones and Grooves",
+    description: "An interactive music platform for exploring different tones and rhythms.",
+    tags: ["Audio", "Interactive", "UI/UX"],
+    link: "#",
+    image: tonesAndGroovesImg.src
+  },
+  {
+    title: "Stickings Builder",
+    description: "A specialized tool for drummers to build and practice stickings.",
+    tags: ["Music", "Tool", "Development"],
+    link: "#",
+    image: stickingsBuilderImg.src
+  },
+
+  {
+    title: "Thesaurus Match",
+    description: "A word game or tool focused on matching synonyms and expanding vocabulary.",
+    tags: ["App", "Educational", "Logic"],
+    link: "#",
+    image: thesaurusMatchImg.src
+  },
+  {
+    title: "Names Project",
+    description: "A creative digital project showcasing distinct names and identities.",
+    tags: ["Showcase", "Web", "Design"],
+    link: "#",
+    image: namesProjectImg.src
+  }
+];
+---
+<section class="section projects-section">
+  <div class="container">
+    <div class="section-header text-center animate-fade-up">
+      <h2 class="section-title">Projects</h2>
+    </div>
+    
+    <div class="projects-grid">
+      {projects.map((project) => (
+        <a href={project.link} class="project-card glass">
+          <div class="project-image-wrapper">
+            <img src={project.image} alt={project.title} class="project-image" loading="lazy" />
+            <div class="project-overlay">
+              <span class="view-project">View Project →</span>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">{project.title}</h3>
+            <p class="project-desc">{project.description}</p>
+            <div class="project-tags">
+              {project.tags.map((tag) => (
+                <span class="tag">{tag}</span>
+              ))}
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .projects-section {
+    position: relative;
+    z-index: 10;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+
+  .section-header {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .section-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .section-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+  }
+  
+  .project-card {
+    flex: 1 1 350px;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border-color: rgba(139, 92, 246, 0.3);
+  }
+  
+  .project-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+  }
+  
+  .project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+  
+  .project-card:hover .project-image {
+    transform: scale(1.05);
+  }
+  
+  .project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .project-card:hover .project-overlay {
+    opacity: 1;
+  }
+  
+  .view-project {
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0.5rem 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+  }
+  
+  .project-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .project-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .project-desc {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+  }
+  
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .tag {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.8rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    color: var(--accent-cyan);
+  }
+  
+  @media (max-width: 768px) {
+    .projects-grid {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .project-card {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+</style>
