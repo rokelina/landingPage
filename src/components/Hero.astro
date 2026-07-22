@@ -1,14 +1,21 @@
 ---
+
 ---
+
 <section class="section hero">
   <div class="container hero-container animate-fade-up">
     <div class="hero-content">
-      <h1 class="greeting">Hi, I'm <span class="text-gradient">Rosina</span></h1>
+      <h1 class="greeting">
+        Hi, I'm <span class="text-gradient">Rosina</span>
+      </h1>
       <p class="subtitle">
-       A versatile technologist and autonomous problem-solver focused on modern front-end frameworks, with hands-on capability to troubleshoot REST APIs, parse JSON payloads, and rapidly adopt new tools
+        A versatile technologist and autonomous problem-solver focused on modern
+        front-end frameworks, with hands-on capability to troubleshoot REST
+        APIs, parse JSON payloads, and rapidly adopt new tools.
       </p>
       <div class="hero-actions">
-        <a href="/resume.pdf" target="_blank" class="btn-primary">View Resume</a>
+        <a href="/resume.pdf" target="_blank" class="btn-primary">View Resume</a
+        >
       </div>
     </div>
   </div>
@@ -20,21 +27,21 @@
     padding-bottom: 5rem;
     align-items: center;
   }
-  
+
   .hero-container {
     max-width: 1200px; /* Match the global container max-width to ensure alignment */
     margin-left: 10vw;
   }
-  
+
   .greeting {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
     line-height: 1.1;
     letter-spacing: -1px;
     margin-bottom: 1.5rem;
     color: var(--text-primary);
   }
-  
+
   .subtitle {
     font-size: 1.2rem;
     color: var(--text-secondary);
@@ -42,29 +49,35 @@
     margin-bottom: 2.5rem;
     max-width: 600px;
   }
-  
+
   .hero-actions {
     display: flex;
     gap: 1rem;
   }
-  
+
   .btn-primary {
     display: inline-block;
-    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-violet));
+    background: linear-gradient(
+      135deg,
+      var(--accent-cyan),
+      var(--accent-violet)
+    );
     color: var(--text-primary);
     padding: 0.8rem 2.5rem;
     border-radius: 9999px;
     font-weight: 600;
     font-size: 1.1rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
   }
-  
+
   .btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
     color: var(--text-primary);
   }
-  
+
   @media (max-width: 768px) {
     .greeting {
       font-size: 2.2rem;
